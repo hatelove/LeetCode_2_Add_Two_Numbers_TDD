@@ -77,6 +77,15 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             AssertResult(expected, l1, l2);
         }
 
+        [TestMethod]
+        public void L1_is_5_and_L2_is_7_3_should_return_2_4()
+        {
+            var l1 = new ListNode(5);
+            var l2 = CreateListNodes(new int[] { 7, 3 });
+            var expected = CreateListNodes(new int[] { 2, 4 });
+            AssertResult(expected, l1, l2);
+        }
+
         private static void AssertResult(ListNode expected, ListNode l1, ListNode l2)
         {
             expected.All().ToExpectedObject().ShouldEqual(new Solution().AddTwoNumbers(l1, l2).All());
