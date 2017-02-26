@@ -12,6 +12,11 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var l2 = new ListNode(4);
             var expected = new ListNode(9);
 
+            AssertResult(expected, l1, l2);
+        }
+
+        private static void AssertResult(ListNode expected, ListNode l1, ListNode l2)
+        {
             Assert.AreEqual(expected.val, new Solution().AddTwoNumbers(l1, l2).val);
         }
     }
