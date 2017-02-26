@@ -31,7 +31,7 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
 
         private static void AssertResult(ListNode expected, ListNode l1, ListNode l2)
         {
-            Assert.AreEqual(expected.val, new Solution().AddTwoNumbers(l1, l2).val);
+            expected.All().ToExpectedObject().ShouldEqual(new Solution().AddTwoNumbers(l1, l2).All());
         }
     }
 
