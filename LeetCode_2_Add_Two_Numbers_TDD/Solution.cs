@@ -30,11 +30,21 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
                 var l1NextVal = l1.next?.val ?? 0;
                 var l2NextVal = l2.next?.val ?? 0;
 
-                result.next = new ListNode(carry + l1NextVal + l2NextVal);
+                var nextSum = carry + l1NextVal + l2NextVal;
+                var nextVal = nextSum % 10;
 
-                if (hasL1Next && l1.next.next != null)
+                result.next = new ListNode(nextVal);
+
+                var needCarry_2 = nextSum >= 10;
+                var hasL1Next_2 = hasL1Next && l1.next.next != null;
+                var hasL2Next_2 = hasL2Next && l2.next.next != null;
+
+                if (needCarry_2 || hasL1Next_2 || hasL2Next_2)
                 {
-                    result.next.next = new ListNode(l1.next.next.val);
+                    var carry_2 = needCarry_2 ? 1 : 0;
+                    var l1Next_2_Val = l1.next?.next?.val ?? 0;
+                    var l2Next_2_Val = l2.next?.next?.val ?? 0;
+                    result.next.next = new ListNode(carry_2 + l1Next_2_Val + l2Next_2_Val);
                 }
             }
 
