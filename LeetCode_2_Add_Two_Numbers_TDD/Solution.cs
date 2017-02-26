@@ -72,9 +72,8 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var l2Val = l2?.val ?? 0;
 
             var rootSum = carry + l1Val + l2Val;
-            var rootVal = rootSum % 10;
 
-            var result = new ListNode(rootVal);
+            var result = new ListNode(rootSum % 10);
 
             var carryNext = rootSum >= 10 ? 1 : 0;
             result.next = CreateSumNode(l1?.next ?? null, l2?.next ?? null, carryNext);
