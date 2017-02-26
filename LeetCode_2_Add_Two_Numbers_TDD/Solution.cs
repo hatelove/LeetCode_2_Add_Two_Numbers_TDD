@@ -27,6 +27,10 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             {
                 result.next = new ListNode(l1.next.val);
             }
+            else if (l2.next != null)
+            {
+                result.next = new ListNode(l2.next.val);
+            }
 
             return result;
         }
