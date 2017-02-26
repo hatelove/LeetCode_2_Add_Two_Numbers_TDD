@@ -40,7 +40,7 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var currentNode = listNode;
             for (int i = 1; i < nums.Length; i++)
             {
-                currentNode.next = new ListNode(1);
+                currentNode.next = new ListNode(nums[i]);
                 currentNode = currentNode.next;
             }
 
@@ -56,6 +56,24 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
 
             var expected = CreateListNodes(new int[] { 8, 4 });
 
+            AssertResult(expected, l1, l2);
+        }
+
+        [TestMethod]
+        public void L1_is_5_and_L2_is_3_4_should_return_8_4()
+        {
+            var l1 = new ListNode(5);
+            var l2 = CreateListNodes(new int[] { 3, 4 });
+            var expected = CreateListNodes(new int[] { 8, 4 });
+            AssertResult(expected, l1, l2);
+        }
+
+        [TestMethod]
+        public void L1_is_5_4_and_L2_is_3_2_should_return_8_6()
+        {
+            var l1 = CreateListNodes(new int[] { 5, 4 });
+            var l2 = CreateListNodes(new int[] { 3, 2 });
+            var expected = CreateListNodes(new int[] { 8, 6 });
             AssertResult(expected, l1, l2);
         }
 
