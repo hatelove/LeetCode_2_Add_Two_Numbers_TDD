@@ -98,9 +98,18 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
         [TestMethod]
         public void L1_is_5_4_3_and_L2_is_2_should_return_7_4_3()
         {
-            var l1 = CreateListNodes(new int[] {5, 4, 3});
+            var l1 = CreateListNodes(new int[] { 5, 4, 3 });
             var l2 = new ListNode(2);
-            var expected = CreateListNodes(new int[] {7, 4, 3});
+            var expected = CreateListNodes(new int[] { 7, 4, 3 });
+            AssertResult(expected, l1, l2);
+        }
+
+        [TestMethod]
+        public void L1_is_5_and_L2_is_1_2_3_should_return_6_2_3()
+        {
+            var l1 = new ListNode(5);
+            var l2 = CreateListNodes(new int[] { 1, 2, 3 });
+            var expected = CreateListNodes(new int[] { 6, 2, 3 });
             AssertResult(expected, l1, l2);
         }
 
