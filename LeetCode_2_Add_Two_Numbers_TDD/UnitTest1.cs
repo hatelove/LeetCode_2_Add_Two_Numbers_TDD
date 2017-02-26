@@ -112,13 +112,23 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var expected = CreateListNodes(new int[] { 6, 2, 3 });
             AssertResult(expected, l1, l2);
         }
-        
+
         [TestMethod]
         public void L1_is_5_4_and_L2_is_2_8_should_return_7_2_1()
         {
             var l1 = CreateListNodes(new int[] { 5, 4 });
             var l2 = CreateListNodes(new int[] { 2, 8 });
             var expected = CreateListNodes(new int[] { 7, 2, 1 });
+            AssertResult(expected, l1, l2);
+        }
+
+        [TestCategory("LeetCode test case")]
+        [TestMethod]
+        public void L1_is_2_4_3_and_L2_is_5_6_4_should_return_7_0_8()
+        {
+            var l1 = CreateListNodes(new int[] { 2, 4, 3 });
+            var l2 = CreateListNodes(new int[] { 5, 6, 4 });
+            var expected = CreateListNodes(new int[] { 7, 0, 8 });
             AssertResult(expected, l1, l2);
         }
 
