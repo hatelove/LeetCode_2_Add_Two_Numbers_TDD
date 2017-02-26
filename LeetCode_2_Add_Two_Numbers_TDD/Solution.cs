@@ -19,9 +19,14 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var rootVal = rootSum % 10;
 
             var result = new ListNode(rootVal);
-            if (rootSum >= 10 || l1.next != null || l2.next != null)
+
+            var needCarry = rootSum >= 10;
+            var hasL1Next = l1.next != null;
+            var hasL2Next = l2.next != null;
+
+            if (needCarry || hasL1Next || hasL2Next)
             {
-                var carry = rootSum >= 10 ? 1 : 0;
+                var carry = needCarry ? 1 : 0;
                 var l1NextVal = l1.next?.val ?? 0;
                 var l2NextVal = l2.next?.val ?? 0;
 
