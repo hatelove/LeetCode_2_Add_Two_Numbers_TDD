@@ -23,6 +23,10 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             {
                 result.next = new ListNode(1);
             }
+            else if (l1.next != null)
+            {
+                result.next = new ListNode(l1.next.val);
+            }
 
             return result;
         }
