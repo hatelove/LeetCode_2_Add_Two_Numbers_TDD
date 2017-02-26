@@ -25,17 +25,23 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
                 return carry == 0 ? null : new ListNode(carry);
             }
 
+            var nodeSum = NodeSum(l1, l2, carry);
+
+            var result = new ListNode(nodeSum % 10);
+
+            var carryToHigherDigit = nodeSum >= 10 ? 1 : 0;
+            result.next = CreateSumNode(l1?.next ?? null, l2?.next ?? null, carryToHigherDigit);
+
+            return result;
+        }
+
+        private static int NodeSum(ListNode l1, ListNode l2, int carry)
+        {
             var l1Val = l1?.val ?? 0;
             var l2Val = l2?.val ?? 0;
 
-            var rootSum = carry + l1Val + l2Val;
-
-            var result = new ListNode(rootSum % 10);
-
-            var carryNext = rootSum >= 10 ? 1 : 0;
-            result.next = CreateSumNode(l1?.next ?? null, l2?.next ?? null, carryNext);
-
-            return result;
+            var nodeSum = carry + l1Val + l2Val;
+            return nodeSum;
         }
     }
 
