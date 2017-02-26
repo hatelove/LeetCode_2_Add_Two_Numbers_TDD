@@ -112,8 +112,7 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             var expected = CreateListNodes(new int[] { 6, 2, 3 });
             AssertResult(expected, l1, l2);
         }
-
-        [Ignore]
+        
         [TestMethod]
         public void L1_is_5_4_and_L2_is_2_8_should_return_7_2_1()
         {
