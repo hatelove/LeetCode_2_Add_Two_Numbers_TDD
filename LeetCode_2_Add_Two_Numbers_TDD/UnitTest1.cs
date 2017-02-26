@@ -17,7 +17,6 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
             AssertResult(expected, l1, l2);
         }
 
-        [Ignore]
         [TestMethod]
         public void L1_is_8_and_L2_is_6_should_return_4_1()
         {
