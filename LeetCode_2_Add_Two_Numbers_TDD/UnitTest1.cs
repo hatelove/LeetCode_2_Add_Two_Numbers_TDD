@@ -22,8 +22,43 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
         {
             var l1 = new ListNode(8);
             var l2 = new ListNode(6);
-            var expected = new ListNode(4);
-            expected.next = new ListNode(1);
+
+            var expected = CreateListNodes(new int[] { 4, 1 });
+
+            AssertResult(expected, l1, l2);
+        }
+
+        private static ListNode CreateListNodes(int[] nums)
+        {
+            if (nums.Length == 0)
+            {
+                return null;
+            }
+
+            var listNode = new ListNode(nums[0]);
+
+            var currentNode = listNode;
+            for (int i = 1; i < nums.Length; i++)
+            {
+                currentNode.next = new ListNode(1);
+                currentNode = currentNode.next;
+            }
+
+            return listNode;
+        }
+
+        [Ignore]
+        [TestMethod]
+        public void L1_is_5_4_and_L2_is_3_2_should_return_8_6()
+        {
+            var l1 = new ListNode(5);
+            l1.next = new ListNode(4);
+
+            var l2 = new ListNode(3);
+            l2.next = new ListNode(2);
+
+            var expected = new ListNode(8);
+            expected.next = new ListNode(6);
 
             AssertResult(expected, l1, l2);
         }
