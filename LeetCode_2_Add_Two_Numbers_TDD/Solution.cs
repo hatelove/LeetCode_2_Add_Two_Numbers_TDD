@@ -15,7 +15,16 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            return new ListNode(l1.val + l2.val);
+            var rootSum = l1.val + l2.val;
+            var rootVal = rootSum % 10;
+
+            var result = new ListNode(rootVal);
+            if (rootSum >= 10)
+            {
+                result.next = new ListNode(1);
+            }
+
+            return result;
         }
     }
 
