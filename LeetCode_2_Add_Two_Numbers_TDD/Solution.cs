@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace LeetCode_2_Add_Two_Numbers_TDD
 {
@@ -27,6 +27,19 @@ namespace LeetCode_2_Add_Two_Numbers_TDD
         public ListNode(int x)
         {
             val = x;
+        }
+
+        public IEnumerable<int> All()
+        {
+            var result = new List<int>();
+            result.Add(this.val);
+
+            if (this.next != null)
+            {
+                result.AddRange(next.All());
+            }
+
+            return result;
         }
     }
 }
